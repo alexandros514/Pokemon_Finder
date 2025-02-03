@@ -1,8 +1,53 @@
-<%= form_with(url: root_path, method: :get) do |f| %>
-  <%= f.search_field :q %>
-  <%= f.submit("POKE IT") %>
+<h1> Welcome to your Pokemon center </h1>
+
+
+  <%= form_with(url: root_path, method: :get) do |f| %>
+    <%= f.search_field :q %>
+    <%= f.submit("POKE IT") %>
+  <% end %>
+
+
+<% if @pokemon.present? %>
+
+
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+  <%= image_tag @pokemon_image %>
+
+  <hr>
+
+
 <% end %>
 
-<%= @pokemon_name %>
-<%= image_tag @pokemon_image %>
+<h1> My Pokemons </h1>
 
+<table class="table table-dark table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Type</th>
+    <th scope="col">Abilities</th>
+    <th scope="col">Experience</th>
+    <th scope="col">Weight</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @pokemon_name %></td>
+    <td><%= @pokemon_types %></td>
+    <td><%= @pokemon_ability %></td>
+    <td><%= @pokemon_exp %></td>
+    <td><%= @pokemon_weight %></td>
+  </tbody>
+</table>
