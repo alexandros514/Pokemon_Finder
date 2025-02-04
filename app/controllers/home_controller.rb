@@ -8,17 +8,21 @@ class HomeController < ApplicationController
       end
       @pokemon = resp
       @pokemon_image = @pokemon["sprites"]["front_default"]
+      @pokemon_image_shiny = @pokemon["sprites"]["front_shiny"]
       @pokemon_name = @pokemon["name"]
-      @pokemon_ability = @pokemon["abilities"].map{|ability_hash| ability_hash["ability"]["name"]}.join(",")
-      @pokemon_types = @pokemon["types"].map{|type_hash| type_hash["type"]["name"]}.join(",") #[0]["type"]["name"]
+      @pokemon_ability = @pokemon["abilities"].map{|ability_hash| ability_hash["ability"]["name"]}.join(" & ")
+      @pokemon_types = @pokemon["types"].map{|type_hash| type_hash["type"]["name"]}.join(" & ") #[0]["type"]["name"]
       @pokemon_exp = @pokemon["base_experience"]
       @pokemon_weight =@pokemon["weight"]
-    end
 
     search_tcg = @pokemon_name
     resp_tcg = HTTParty.get("https://api.pokemontcg.io/v2/cards?q=!name:#{search_tcg}")
-    @pokemonTcg = resp_tcg
-    @pokemonTcg_na
+      if resp_tcg.code != 404
+        @pokemon_tcg = resp_tcg
+        @pokemon_tcg_images = @pokemon_tcg["data"].map{|tcgplayer_hash| tcgplayer_hash["images"]["small"]}
+      end
+
+    end
 
 
   end
