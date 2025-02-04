@@ -1,27 +1,66 @@
-<h1> Welcome to your Pokemon center </h1>
+<div class="text-center">
+  <h1> Welcome to your Pokemon center </h1>
+
+</div>
 
 
 <%= form_with(url: root_path, method: :get) do |f| %>
-  <%= f.search_field :q %>
-  <%= f.submit("POKE IT") %>
+  <div class="mb-3">
+    <label for="search_field" class="form-label"></label>
+    <%= f.search_field :q, id: "search_field", placeholder: "Search pokemon...", class: "form-control" %>
+  </div>
+  <div class="text-center">
+    <div class="p-4">
+      <%= f.submit "POKE IT", class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
+
 
 
 <% if @pokemon.present? %>
+  <!--  <div class="shadow-none p-3 mb-5 bg-body-tertiary rounded">-->
+  <%# 6.times do %>
+  <%#= image_tag @pokemon_image %>
+  <%#= image_tag @pokemon_image_shiny %>
+  <%# end %>
+  <!--  </div>-->
+
+
+
+  <div class="d-flex justify-content-center">
+    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+      <div class="card text-center" style="max-width: 940px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <%= image_tag @pokemon_tcg_images_core, class: "img-fluid rounded-start", alt: "Pokemon image" %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= "NAME: #{@pokemon_name.capitalize}" %></h5>
+              <p class="card-text"><%= "ABILITIES: #{@pokemon_ability.capitalize }" %></p>
+              <p class="card-text"><%= "TYPE: #{@pokemon_types.capitalize }" %></p>
+              <p class="card-text"><%= "EXP: #{@pokemon_exp }" %></p>
+              <p class="card-text"><%= "WEIGHT: #{@pokemon_weight}" %></p>
+              <hr>
+              <p class="card-text"><small class="text-body-secondary"><%= @pokemon_tcg_txt %></small></p>
+              <div>
+                <%= image_tag @pokemon_image %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <hr>
-  <% 7.times do %>
-    <%= image_tag @pokemon_image %>
-    <%= image_tag @pokemon_image_shiny %>
-  <% end %>
-
-  <hr>
-
-
 
 <% end %>
 
-<h1> My Pokemons </h1>
+<h1> TCG illustrations </h1>
 
 <table class="table table-dark table-striped">
   <thead>
@@ -43,10 +82,12 @@
   </tbody>
 </table>
 
+
 <% if @pokemon_tcg.present? %>
 
   <% @pokemon_tcg_images.each do |image| %>
     <%= image_tag image %>
   <% end %>
-  
+
+
 <% end %>

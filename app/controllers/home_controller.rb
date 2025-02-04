@@ -20,10 +20,11 @@ class HomeController < ApplicationController
       if resp_tcg.code != 404
         @pokemon_tcg = resp_tcg
         @pokemon_tcg_images = @pokemon_tcg["data"].map{|tcgplayer_hash| tcgplayer_hash["images"]["small"]}
+        @pokemon_tcg_images_core =@pokemon_tcg["data"].first["images"]["large"]
+        @pokemon_tcg_txt = @pokemon_tcg["data"].first["flavorText"]
       end
 
     end
-
 
   end
 end
