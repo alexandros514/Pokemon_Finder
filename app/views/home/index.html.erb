@@ -25,7 +25,9 @@
       <div class="card text-center" style="max-width: 940px;">
         <div class="row g-0">
           <div class="col-md-4">
-            <%= image_tag @pokemon_tcg_images_core, class: "img-fluid rounded-start", alt: "Pokemon image" %>
+            <% if @pokemon_tcg_images_core.present? %>
+              <%= image_tag @pokemon_tcg_images_core, class: "img-fluid rounded-start", alt: "Pokemon image" %>
+            <% end %>
           </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -57,7 +59,6 @@
     </div>
   </div>
 <% end %>
-
 
 
 <% if @pokemon_tcg.present? %>
