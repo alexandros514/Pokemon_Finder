@@ -5,7 +5,7 @@
 
 ## Features
 - Fetch Pokémon information via the [Pokémon API](https://pokeapi.co/), which provides access to a comprehensive database of Pokémon species, moves, abilities, and more.
-- Display Pokémon TCG illustrations using the [TCGdex API](https://tcgdex.dev/), offering detailed information and images of Pokémon trading cards.
+- Display Pokémon TCG illustrations using the [Pokémon TCG API](https://pokemontcg.io/), offering detailed information and images of Pokémon trading cards.
 - Responsive UI compatible with multiple devices, styled with Bootstrap for a modern look and feel.
 - RSpec testing to ensure the application functions correctly and efficiently.
 - Robust error handling for API requests to manage and display informative error messages when Pokémon data cannot be retrieved.
