@@ -1,24 +1,11 @@
-# README
+# Pokemon Finder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introduction
+**Pokemon Finder** is a Ruby on Rails application designed to fetch and display detailed information and trading card game (TCG) illustrations for Pokémon. It leverages two APIs to provide comprehensive Pokémon data and visual content.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Features
+- Fetch Pokémon information via the [Pokémon API](https://pokeapi.co/), which provides access to a comprehensive database of Pokémon species, moves, abilities, and more.
+- Display Pokémon TCG illustrations using the [TCGdex API](https://tcgdex.dev/), offering detailed information and images of Pokémon trading cards.
+- Responsive UI compatible with multiple devices, styled with Bootstrap for a modern look and feel.
+- RSpec testing to ensure the application functions correctly and efficiently.
+- Robust error handling for API requests to manage and display informative error messages when Pokémon data cannot be retrieved.
