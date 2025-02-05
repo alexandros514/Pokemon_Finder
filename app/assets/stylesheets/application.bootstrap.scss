@@ -1,2 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+
+.container-small {
+  max-width: 950px;
+  margin: auto;
+  background-color: #f6f5f5;
+  border-radius: 60px;
+
+}
