@@ -1,4 +1,4 @@
-# Pokemon Finder
+# Pokemon_Finder
 
 ## Introduction
 **Pokemon Finder** is a Ruby on Rails application designed to fetch and display detailed information and trading card game (TCG) illustrations for Pokémon. It leverages two APIs to provide comprehensive Pokémon data and visual content.
