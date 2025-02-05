@@ -1,21 +1,22 @@
 <div class="container-small">
-
-  <div class="mb-3 ">
-    <div class="container-fluid p-3 my-3 bg-danger rounded-top-5 ">
-      <label for="search_field" class="form-label"></label>
+  <div class="my-3">
+    <div class="card rounded-top-5 border-0">
       <%= form_with(url: root_path, method: :get) do |f| %>
+        <div class="card-header p-3 bg-danger rounded-top-5 ">
+          <%= f.search_field :q, id: "search_field", placeholder: "Search pokemon...", class: "form-control" %>
 
-        <%= f.search_field :q, id: "search_field", placeholder: "Search pokemon...", class: "form-control" %>
         </div>
-        </div>
-        <div class="text-center">
+        <div class="text-center card-body rounded-bottom-5 bg-light">
           <h3> Welcome to your Pokemon center </h3>
           <div class="p-4">
             <%= f.submit "POKE IT", class: "btn btn-primary" %>
           </div>
         </div>
       <% end %>
-      </div>
+    </div>
+  </div>
+</div>
+
 <br>
 
 <% if @pokemon.present? %>
@@ -48,29 +49,13 @@
   <hr>
 <% end %>
 
-<table class="table table-dark table-striped">
-  <thead>
-  <tr>
-    <th scope="col">Name</th>
-    <th scope="col">Type</th>
-    <th scope="col">Abilities</th>
-    <th scope="col">Experience</th>
-    <th scope="col">Weight</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td><%= @pokemon_name %></td>
-    <td><%= @pokemon_types %></td>
-    <td><%= @pokemon_ability %></td>
-    <td><%= @pokemon_exp %></td>
-    <td><%= @pokemon_weight %></td>
-  </tbody>
-</table>
+
 
 <% if @pokemon_tcg.present? %>
   <h1> TCG illustrations </h1>
-  <% @pokemon_tcg_images.each do |image| %>
-    <%= image_tag image %>
-  <% end %>
+  <div class="d-flex gap-3 justify-content-center flex-wrap">
+    <% @pokemon_tcg_images.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
+  </div>
 <% end %>
